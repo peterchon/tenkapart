@@ -1,0 +1,3 @@
+/*
+    All scripts are belong to us.
+ */
