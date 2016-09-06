@@ -3,11 +3,159 @@
     Just kidding.
 */
 
-.reset {
-    margin: 0;
-    padding: 0;
-    color: #2f2f2f;
-    font-size: 1vh;
-    font-family: sans-serif;
-    background-color: black;
+html, body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.sig {
+  padding: 0 25px;
+  text-align: center;
+  color: #09f;
+}
+.sig a {
+  color: #09f;
+  text-decoration: none;
+}
+.sig a:hover {
+  text-decoration: underline;
+}
+
+.simple-calendar {
+  margin: 25px;
+}
+.simple-calendar .month-label {
+  font-size: 1.8em;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.simple-calendar .month-label small {
+  font-size: 0.65em;
+  font-weight: normal;
+  color: #999;
+}
+.simple-calendar .month-label small:before {
+  content: "//";
+  display: inline-block;
+  margin-right: 5px;
+}
+.simple-calendar .calendar-ctrl {
+  text-align: center;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  border-top: 1px solid #ccc;
+  border-top-style: dashed;
+  border-top-color: #dfdfdf;
+}
+.simple-calendar .calendar-ctrl span {
+  font-size: 0.4em;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-color: #dfdfdf;
+  font-weight: normal;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: white;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -o-border-radius: 20px;
+  border-radius: 20px;
+  -webkit-transition: background-color, 300ms;
+  -moz-transition: background-color, 300ms;
+  -o-transition: background-color, 300ms;
+  transition: background-color, 300ms;
+}
+.simple-calendar .calendar-ctrl span:hover {
+  background-color: #dfdfdf;
+}
+.simple-calendar .calendar-ctrl span:active {
+  background-color: #ccc;
+}
+.simple-calendar .calendar-ctrl .prev:hover:before, .simple-calendar .calendar-ctrl .prev:hover:after,
+.simple-calendar .calendar-ctrl .next:hover:before,
+.simple-calendar .calendar-ctrl .next:hover:after {
+  background-color: white;
+}
+.simple-calendar .calendar-ctrl .prev:before,
+.simple-calendar .calendar-ctrl .next:after {
+  content: "";
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  background-color: #ccc;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -o-border-radius: 100%;
+  border-radius: 100%;
+  -webkit-transition: background-color, 300ms;
+  -moz-transition: background-color, 300ms;
+  -o-transition: background-color, 300ms;
+  transition: background-color, 300ms;
+}
+.simple-calendar .calendar-ctrl .prev:before:hover,
+.simple-calendar .calendar-ctrl .next:after:hover {
+  background-color: white;
+}
+.simple-calendar .calendar-ctrl .prev:before {
+  margin-right: 5px;
+}
+.simple-calendar .calendar-ctrl .next:after {
+  margin-left: 5px;
+}
+.simple-calendar .calendar-ctrl .reset {
+  margin: 0 10%;
+}
+.simple-calendar .calendar-container:before, .simple-calendar .calendar-container:after {
+  content: "";
+  display: table;
+}
+.simple-calendar .calendar-container:after {
+  clear: both;
+}
+.simple-calendar .day {
+  float: left;
+  width: 14.24%;
+  background-color: white;
+}
+.simple-calendar .day.today {
+  background-color: lightyellow;
+}
+@media screen and (min-width: 321px) {
+  .simple-calendar .day:nth-child(-n+7) {
+    border-top: 1px solid #ccc;
+  }
+  .simple-calendar .day:nth-child(7n) {
+    border-right: 1px solid #ccc;
+  }
+  .simple-calendar .day:nth-child(7n+1) {
+    clear: left;
+  }
+}
+.simple-calendar .day-container {
+  height: 60px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-top: 0;
+  border-right: 0;
+  font-size: 1.2em;
+}
+.simple-calendar .day-label {
+  text-transform: capitalize;
+  display: block;
+  color: #ccc;
+  font-size: 0.6em;
+  padding: 5px 0;
+}
+
+@media screen and (max-width: 320px) {
+  .simple-calendar .calendar-container {
+    border: 1px solid #ccc;
+    border-left: 0;
+  }
+  .simple-calendar .day {
+    width: 33.334%;
+  }
+  .simple-calendar .day.skip {
+    display: none;
+  }
 }
